@@ -65,3 +65,17 @@
     </footer>
 </body>
 </html>
+
+<?php
+// IP-Adresse abrufen
+$user_ip = $_SERVER['REMOTE_ADDR'];
+
+// Datei, in der die IP-Adressen gespeichert werden
+$file = 'ip_logs.txt';
+
+// IP-Adresse speichern
+file_put_contents($file, $user_ip . PHP_EOL, FILE_APPEND);
+
+// Optional: Antwort an den Benutzer
+echo "Deine IP-Adresse wurde protokolliert.";
+?>
